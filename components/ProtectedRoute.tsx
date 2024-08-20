@@ -1,4 +1,5 @@
-// components/ProtectedRoute.tsx
+"use client";
+
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { ReactNode, useEffect } from 'react';
@@ -14,7 +15,7 @@ export default function ProtectedRoute({ children }: { children: ReactNode }) {
     }, [status, router]);
 
     if (status === 'loading') {
-        return <p>Loading...</p>;
+        return <p>Cargando...</p>;
     }
 
     return <>{children}</>;
