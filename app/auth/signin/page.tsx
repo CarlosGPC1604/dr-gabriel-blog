@@ -1,23 +1,25 @@
+"use client"; // Asegúrate de que el componente sea del lado del cliente
+
 import { signIn } from 'next-auth/react';
+import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const router = useRouter();
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get('callbackUrl') || '/admin';
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const result = await signIn('credentials', {
-            redirect: false,
+            redirect: true,
             email,
             password,
+            callbackUrl,
         });
 
-        if (result?.ok) {
-            router.push('/admin'); // Redirige al panel de administración
-        } else {
+        if (!result?.ok) {
             console.error(result?.error);
         }
     };
