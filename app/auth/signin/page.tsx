@@ -29,14 +29,14 @@ export default function SignIn() {
             <h1>Iniciar sesión</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <label className="label-text">Email:</label>
+                    <input type="email" className="input input-bordered grow" value={email} onChange={(e) => setEmail(e.target.value)} required title="Email"/>
                 </div>
                 <div>
-                    <label>Contraseña:</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <label className="label-text">Contraseña:</label>
+                    <input type="password" className="input input-bordered grow" value={password} onChange={(e) => setPassword(e.target.value)} required title="Contraseña" />
                 </div>
-                <button type="submit">Iniciar sesión</button>
+                <button className="btn btn-info" type="submit">Iniciar sesión</button>
             </form>
         </div>
     );

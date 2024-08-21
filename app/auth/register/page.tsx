@@ -35,18 +35,18 @@ export default function Register() {
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Nombre:</label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+                    <label className="label-text">Nombre:</label>
+                    <input type="text" className="input input-bordered grow" value={name} onChange={(e) => setName(e.target.value)} required title="Nombre"/>
                 </div>
                 <div>
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <label className="label-text">Email:</label>
+                    <input type="email" className="input input-bordered grow" value={email} onChange={(e) => setEmail(e.target.value)} required title="Email"/>
                 </div>
                 <div>
-                    <label>Contraseña:</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <label className="label-text">Contraseña:</label>
+                    <input type="password" className="input input-bordered grow" value={password} onChange={(e) => setPassword(e.target.value)} required title="Contraseña"/>
                 </div>
-                <button type="submit">Registrar</button>
+                <button type="submit" className="btn btn-info">Registrar</button>
             </form>
         </div>
     );
