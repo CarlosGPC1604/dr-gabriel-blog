@@ -23,7 +23,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <title>Tu Sitio Web</title>
+        <title>Dr. Gabriel López</title>
       </head>
       <body className={inter.className}>
         <SessionProviderWrapper>

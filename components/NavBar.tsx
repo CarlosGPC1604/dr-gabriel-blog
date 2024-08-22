@@ -1,11 +1,14 @@
 import React from 'react';
+import Image from 'next/image';
+import Logo from '../public/logo.svg';
+import LogoSimplificado from '../public/logo-simplificado.svg';
 
 const NavBar = () => {
     return (
         <div className="navbar bg-base-100">
-            <div className="navbar-start">
+            <div className="navbar-start justify-items-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div tabIndex={0} role="button" className="btn btn-ghost px-2 lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -33,12 +36,15 @@ const NavBar = () => {
                         <li><a>Contacto</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl" href="/">daisyUI</a>
+                <a href="/" className="h-14">
+                    <Image src={Logo} alt="Logo" className="hidden w-2/5 object-contain ml-4 sm:flex" />
+                    <Image src={LogoSimplificado} alt="Logo" className="flex h-14 sm:hidden" />
+                </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a href="/">Inicio</a></li>
-                    <li>
+                    <li><a className="mx-1" href="/">Inicio</a></li>
+                    <li className="mx-1">
                         <details>
                             <summary>Blog</summary>
                             <ul className="p-2">
@@ -47,12 +53,12 @@ const NavBar = () => {
                             </ul>
                         </details>
                     </li>
-                    <li><a>Contacto</a></li>
+                    <li className="mx-1"><a>Contacto</a></li>
                 </ul>
             </div>
             <div className="navbar-end">
                 <a className="btn mx-1 sm:mx-2" href="/auth/signin">Iniciar sesión</a>
-                <a className="btn btn-info mx-1 sm:mx-2"href="/auth/register">Registrarte</a>
+                <a className="btn btn-info mx-1 sm:mx-2" href="/auth/register">Registrarte</a>
             </div>
         </div>
     );
