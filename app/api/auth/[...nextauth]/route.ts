@@ -1,13 +1,11 @@
-// app/api/auth/[...nextauth]/route.ts
-import NextAuth from 'next-auth';
+import NextAuth, { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
-import { NextRequest, NextResponse } from 'next/server';
 
 const prisma = new PrismaClient();
 
-const handler = NextAuth({
+export const authOptions: AuthOptions = {
     providers: [
         CredentialsProvider({
             name: 'Credentials',
@@ -16,14 +14,23 @@ const handler = NextAuth({
                 password: { label: 'Password', type: 'password' },
             },
             async authorize(credentials) {
+                // Encuentra al usuario por email
                 const user = await prisma.user.findUnique({
                     where: { email: credentials?.email },
                 });
 
+                // Verifica la contraseña
                 if (user && bcrypt.compareSync(credentials!.password, user.password)) {
-                    return { id: user.id, email: user.email, name: user.name, image: user.image };
+                    // Retorna el objeto de usuario que NextAuth espera
+                    return {
+                        id: user.id.toString(),  // Convierte el id a string
+                        email: user.email,
+                        name: user.name,
+                        image: user.image,
+                    };
                 }
 
+                // Retorna null si no se encuentra el usuario o la contraseña es incorrecta
                 return null;
             },
         }),
@@ -32,20 +39,19 @@ const handler = NextAuth({
         async jwt({ token, user }) {
             if (user) {
                 token.id = user.id;
-                token.image = user.image;
             }
             return token;
         },
         async session({ session, token }) {
-            session.user.id = token.id;
-            session.user.image = token.image;
+            if (token) {
+                session.user.id = token.id;
+            }
             return session;
         },
     },
-    pages: {
-        signIn: '/auth/signin',
-    },
     secret: process.env.NEXTAUTH_SECRET,
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
