@@ -22,7 +22,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center gap-8">
           <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://via.placeholder.com/400x200" alt="Servicio 1" /></figure>
+            <figure><Image src="https://via.placeholder.com/400x200" alt="Servicio 1" width={400} height={200} /></figure>
             <div className="card-body">
               <h2 className="card-title">Servicio 1</h2>
               <p>Descripción breve del servicio 1.</p>
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </div>
           <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://via.placeholder.com/400x200" alt="Servicio 2" /></figure>
+            <figure><Image src="https://via.placeholder.com/400x200" alt="Servicio 2" width={400} height={200} /></figure>
             <div className="card-body">
               <h2 className="card-title">Servicio 2</h2>
               <p>Descripción breve del servicio 2.</p>
