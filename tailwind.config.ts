@@ -11,10 +11,10 @@ const config: Config = {
     themes: [
       {
         mytheme: {
-          "primary": "#2563eb",
+          "primary": "#0d1b31",
           "primary-content": "#d2e2ff",
-          "secondary": "#93c5fd",
-          "secondary-content": "#080e16",
+          "secondary": "#e17e00",
+          "secondary-content": "#ffffff",
           "accent": "#dbeafe",
           "accent-content": "#111316",
           "neutral": "#1e40af",
@@ -27,10 +27,10 @@ const config: Config = {
           "info-content": "#cad3da",
           "success": "#bef264",
           "success-content": "#0d1403",
-          "warning": "#fbbf24",
+          "warning": "#ffd528",
           "warning-content": "#150d00",
           "error": "#7f1d1d",
-          "error-content": "#e8d1ce",
+          "error-content": "#f1f1f1",
         },
       },
     ],
