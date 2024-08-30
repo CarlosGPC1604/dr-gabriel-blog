@@ -5,7 +5,7 @@ import LogoSimplificado from '../public/logo-simplificado.svg';
 
 const NavBar = () => {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 z-50">
             <div className="navbar-start justify-items-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost px-2 lg:hidden">
@@ -24,7 +24,7 @@ const NavBar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow z-50">
                         <li><a href="/">Inicio</a></li>
                         <li>
                             <a>Blog</a>
@@ -42,7 +42,7 @@ const NavBar = () => {
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 z-50">
                     <li><a className="mx-1" href="/">Inicio</a></li>
                     <li className="mx-1">
                         <details>
