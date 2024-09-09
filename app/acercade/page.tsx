@@ -7,7 +7,7 @@ export default function AboutPage() {
       {/* Sección Principal */}
       <main className="container mx-auto px-4 py-8 flex flex-col lg:flex-row items-center">
         {/* Información del Doctor */}
-        <div className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+        <div className="px-4 lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
           <h1 className="text-4xl font-bold mb-4">Dr. Gabriel López</h1>
           <p className="text-lg mb-4">
             Es un reconocido especialista en urología con más de 10 años de experiencia en el campo de la salud masculina. Graduado de la Universidad Nacional de Medicina, el Dr. López ha dedicado su carrera a brindar atención personalizada y de calidad a sus pacientes.

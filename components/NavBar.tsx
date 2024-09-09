@@ -33,7 +33,7 @@ const NavBar = () => {
                                 <li><a>Salud masculina</a></li>
                             </ul>
                         </li>
-                        <li><a>Contacto</a></li>
+                        <li><a href='/acercade'>Contacto</a></li>
                     </ul>
                 </div>
                 <a href="/" className="h-14">
@@ -53,7 +53,7 @@ const NavBar = () => {
                             </ul>
                         </details>
                     </li>
-                    <li className="mx-1"><a>Contacto</a></li>
+                    <li className="mx-1"><a href='/acercade'>Contacto</a></li>
                 </ul>
             </div>
             <div className="navbar-end">
